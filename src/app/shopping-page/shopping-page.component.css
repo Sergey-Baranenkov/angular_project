@@ -1,0 +1,9 @@
+.shopping-page__container {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.shopping-page__top-nav{
+  justify-content: end;
+}

@@ -1,0 +1,40 @@
+:host {
+  width: 100%;
+}
+
+.product-list__header {
+  text-align: center;
+  font-size: 24px;
+}
+
+.product_list__container {
+  margin: 0;
+  padding: 0;
+}
+
+.product_list__container:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.product-list__element {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1px dashed gray;
+  list-style-type: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.product-list__element > p:last-of-type {
+  font-style: italic;
+}
+
+.product-list__element p:not(:last-child) {
+  margin-right: 10px;
+}
+
+.product-list__element p:first-child{
+  margin-right: auto;
+}

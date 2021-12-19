@@ -1,0 +1,13 @@
+<h1 class = 'product-list__header'>Список доступных товаров</h1>
+<hr>
+<ul class = 'product_list__container' *ngFor="let product of products" (click)="onClick(product)">
+  <li class = 'product-list__element'>
+    <p>{{product.name}} ({{product.ingredients.length}} ингредиента)</p>
+    <p>{{product.description}}</p>
+    <div class = 'button__block'>
+      <button class = 'count-button count-button_increment' (click)="$event.stopPropagation();onAdd(product)">+</button>
+    </div>
+  </li>
+</ul>
+
+<app-not-found-stub *ngIf="!products.length" [text]="'Товары не найдены'"></app-not-found-stub>

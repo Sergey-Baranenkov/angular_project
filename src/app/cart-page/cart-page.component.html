@@ -1,0 +1,20 @@
+<nav class = 'top-nav'>
+  <a class = 'top-nav__element cart-page__prev-button' routerLink="/">Назад</a>
+</nav>
+
+<h1 class = 'cart-page__header'>Корзина</h1>
+<hr>
+<ul class = 'cart-page__container' *ngFor="let el of cart">
+  <li class = 'cart-page__element'>
+    <p>{{el.ingredient.name}}</p>
+    <p>{{el.ingredient.logo}}</p>
+    <p>{{el.count}}</p>
+    <div class = 'button__block'>
+      <button class = 'count-button count-button_decrement' (click)="onDelete(el.ingredient)">-</button>
+      <button class = 'count-button count-button_increment' (click)="onAdd(el.ingredient)">+</button>
+    </div>
+  </li>
+</ul>
+
+<app-not-found-stub *ngIf="!cart.length" [text]="'Корзина пуста 😢'"></app-not-found-stub>
+

@@ -1,0 +1,35 @@
+:host {
+  width: 100%;
+}
+
+.ingredient-list__header {
+  text-align: center;
+  font-size: 24px;
+}
+
+.ingredient-list__container {
+  margin: 0;
+  padding: 0;
+}
+
+.ingredient-list__container:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.ingredient-list__element {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1px dashed gray;
+  list-style-type: none;
+  padding: 10px 20px;
+}
+
+.ingredient-list__element p:not(:last-child) {
+  margin-right: 10px;
+}
+
+.ingredient-list__element > :nth-child(3){
+  margin-left: auto;
+}

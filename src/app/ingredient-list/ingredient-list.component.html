@@ -1,0 +1,13 @@
+<h1 class = 'ingredient-list__header'>Список ингредиентов выбранного товара</h1>
+<hr>
+<ul class = 'ingredient-list__container' *ngFor="let ingredient of ingredients">
+  <li class = 'ingredient-list__element'>
+    <p>{{ingredient.name}}</p>
+    <p>{{ingredient.logo}}</p>
+    <div class = 'button__block'>
+      <button class = 'count-button count-button_increment' (click)="onAdd(ingredient)">+</button>
+    </div>
+  </li>
+</ul>
+
+<app-not-found-stub *ngIf="!ingredients.length" [text]="'Выберите ингредиент'"></app-not-found-stub>
