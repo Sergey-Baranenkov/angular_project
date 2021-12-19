@@ -1,4 +1,4 @@
-[Пруф](cringe.mkv)
+![Пруф](cringe.gif)
 
 # RecipeList
 
