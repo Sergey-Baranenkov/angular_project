@@ -12,7 +12,7 @@
 }
 
 .cart-page__container {
-  margin: 0;
+  margin: 10px 0 0;
   padding: 0;
 }
 
@@ -36,4 +36,24 @@
 
 .cart-page__element > :nth-child(3){
   margin-left: auto;
+}
+
+.cart-page__input {
+  font-size: 16px;
+  height: 50px;
+  width: 300px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+.cart-page__form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-page__add-button {
+  height: 50px;
+  width: 50px;
 }

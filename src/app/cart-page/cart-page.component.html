@@ -4,6 +4,11 @@
 
 <h1 class = 'cart-page__header'>Корзина</h1>
 <hr>
+<form class="cart-page__form" action="javascript:void(0);">
+  <input class="cart-page__input" placeholder="Введите название ингредиента" type="text" [formControl] = "customIngredientFormControl">
+  <button class="count-button count-button_increment cart-page__add-button" (click) = "onCustomIngredientAdd()">+</button>
+</form>
+
 <ul class = 'cart-page__container' *ngFor="let el of cart">
   <li class = 'cart-page__element'>
     <p>{{el.ingredient.name}}</p>
@@ -17,4 +22,3 @@
 </ul>
 
 <app-not-found-stub *ngIf="!cart.length" [text]="'Корзина пуста 😢'"></app-not-found-stub>
-

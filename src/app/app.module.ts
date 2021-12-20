@@ -8,6 +8,7 @@ import { IngredientListComponent } from './ingredient-list/ingredient-list.compo
 import { ShoppingPageComponent } from './shopping-page/shopping-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { NotFoundStubComponent } from './not-found-stub/not-found-stub.component';
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NotFoundStubComponent } from './not-found-stub/not-found-stub.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

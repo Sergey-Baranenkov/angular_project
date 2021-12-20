@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CartStoreService} from "../cart-store.service";
 import IIngredientCart from "../../interfaces/IIngredientCart";
 import IIngredient from "../../interfaces/IIngredient";
+import {FormControl, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-cart-page',
@@ -10,6 +11,8 @@ import IIngredient from "../../interfaces/IIngredient";
 })
 export class CartPageComponent implements OnInit {
   public cart: IIngredientCart[] = [];
+  public customIngredientFormControl = new FormControl('', Validators.required);
+
   constructor(private cartStore: CartStoreService) { }
 
   ngOnInit(): void {
@@ -22,5 +25,21 @@ export class CartPageComponent implements OnInit {
 
   onDelete(ingredient: IIngredient): void {
     this.cartStore.deleteIngredientFromCart(ingredient);
+  }
+
+  onCustomIngredientAdd() {
+    if ( this.customIngredientFormControl.invalid ) {
+      alert('Ошибка: Пустое название ингредиента');
+      return;
+    }
+    const name = 'Пользовательский ингредиент: ' + this.customIngredientFormControl.value;
+
+    const ingredient: IIngredient = {
+      name,
+      logo: '❓'
+    }
+
+    this.cartStore.addIngredientIntoCart(ingredient);
+    this.customIngredientFormControl.setValue('');
   }
 }
